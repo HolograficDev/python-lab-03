@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Книжный клуб</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📚 Книжный клуб</h1>
+    <a href="/docs" target="_blank">Документация API</a>
+  </header>
+
+  <main>
+    <div id="error" class="error" hidden></div>
+
+    <section class="card">
+      <h2 id="form-title">Добавить книгу</h2>
+      <form id="book-form">
+        <input id="title" placeholder="Название" required>
+        <input id="author" placeholder="Автор" required>
+        <input id="genre" placeholder="Жанр" required>
+        <input id="pages" type="number" min="1" placeholder="Страниц" required>
+        <input id="suggested_by" placeholder="Кто предложил">
+        <select id="status">
+          <option value="planned">В планах</option>
+          <option value="reading">Читаем</option>
+          <option value="finished">Прочитана</option>
+        </select>
+        <input id="finished_on" type="date" title="Дата окончания чтения">
+        <select id="rating" title="Оценка">
+          <option value="">Без оценки</option>
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5</option>
+        </select>
+        <button type="submit" id="submit-btn">Добавить</button>
+        <button type="button" id="cancel-btn" hidden>Отмена</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Книги клуба</h2>
+      <table>
+        <thead>
+          <tr><th>№</th><th>Название</th><th>Автор</th><th>Жанр</th>
+              <th>Стр.</th><th>Статус</th><th>Предложил</th>
+              <th>Оценка</th><th>Прочитана</th><th></th></tr>
+        </thead>
+        <tbody id="books-body"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Статистика</h2>
+      <div id="stats" class="stats"></div>
+      <canvas id="chart" height="110"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Журнал действий</h2>
+      <ul id="log"></ul>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
