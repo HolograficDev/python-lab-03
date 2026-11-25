@@ -237,22 +237,3 @@ python -m pytest -v
    «прочитано книг по месяцам».
 5. **Журнал.** Вкладка «Журнал» — история всех добавлений, изменений и удалений.
 6. **Обновить данные:** `F5`. **Выход:** меню «Файл → Выход» или `Ctrl+Q`.
-
-Если приложение сообщает «Не удалось подключиться к серверу» — запустите
-сервер API (шаг 4). Подробности работы пишутся в файл `bookclub.log`.
-
-## Соответствие заданию
-
-| Уровень | Требование | Где реализовано |
-|---------|-----------|-----------------|
-| Rare | ООП | `domain`, `database`, `desktop` — классы, наследование, композиция |
-| Rare | Таблица, поля ввода, кнопки, лейблы | `desktop/books_tab.py` |
-| Rare | График активности | `desktop/statistics_tab.py` |
-| Rare | Логирование активности | `desktop/activity_tab.py`, таблица `activity_logs` |
-| Rare | Меню и выход | `desktop/main_window.py` |
-| Rare | Собственные исключения | `domain/exceptions.py`, `desktop/api_client.py` |
-| Rare | README.md | этот файл |
-| Medium | БД | PostgreSQL, `database/` |
-| Medium | Тесты pytest | `tests/` |
-| Well-done | Веб-версия на FastAPI | `api/`, `web/` |
-| Well-done | БД в Docker | `compose.yaml` |
